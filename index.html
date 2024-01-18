@@ -1,0 +1,101 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQl</title>
+    <style>
+        body{
+            padding-top: 100px;
+            margin: auto;
+            text-align: center;
+            padding-bottom: 200px;
+            
+        }
+        h4{
+            color: rgb(8, 0, 255);
+            font-size: 40px;
+        }
+        div{
+            color: rgb(44, 44, 44);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        section{
+            margin: auto;
+            margin-top: 50px;
+            width: 50%;
+        }
+        header{
+            color: rgb(0, 62, 62);
+            font-size: 30px;
+        }
+        span{
+            color: red;
+        }
+        H2{
+            font-size: 15PX;
+            color: rgb(44, 44, 44);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        article{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h4>Command SQL</h4>
+    <section>
+            <header>Comando de consulta</header>
+            <H2>Soleciona a tabela selecionada</H2>
+            <div><span>Select * from</span> TB_VENDEDORES </div>
+    </section>
+    <section>
+            <header>Incersão de dados</header>
+            <h2>Incerre dados na tabela selecionada definindo a tabela e os campos, logo em seguida<br> definindo os valores com 
+                os mesmos respectivos lugares abaixo do VALUE
+            </h2>
+            <div><span>INSERT INTO</span> TB_VENDEDORES <br/>
+                (MATRICULA, NOME, DATA_ADMISSAO, PERCENTUAL_COMISSAO)<br/>
+                <span>VALUES</span><br/>
+                 ('00810','Marcia Almeida','14/12/2016', 0.18);</div>
+    </section>
+    <section>
+        <header>Deletar tabelas</header>
+        <h2>Deleta a tabela</h2>
+        <div><span>DROP TABLE</span> TB_VENDEDORES</div>
+    </section>
+    <section>
+        <header>Ataluzação de tabela</header>
+            <h2>Atualiza a tabela selecionada <br>UPDATE seleciona a tabela desejada<br>
+                SET escolhe qual campo e valor da tebela vai ser trocado<br>
+                WHERE faz o filtro de qua valor definido deve ser trocado <br>
+                Colocando mais uma Virgula no SET pode adicionar mais vaores para fazer a alteração
+            </h2>
+            <div>    
+                <span>UPDATE</span> TB_VENDEDORES <br>
+                <span> SET</span> PERCENTUAL_COMISSAO = 0.18 <br>
+                <span>WHERE</span> MATRICULA = '00400';
+             </div>
+    </section>
+    <section>
+        <header>Deleta um linha de uma tabela </header>
+        <h2>Deleta a linha de uma tabela selecionada<br>
+        DELETE FROM faz a selecão da tabela onde vai ser feita a alteração<br>
+        WHERE faz a seleção de qual campo a alteração vai ser feita    
+        </h2>
+        <div><span>DELETE FROM </span>  TB_VENDEDORES <span>WHERE</span> MATRICULA = '00400';</div>
+    </section>
+    <section>
+        <header>Alterando valor e restrição da tabela</header>
+        <h2>ALTER TABLE faz a seleção da tabela e já avisa que vai ser feita alguma alteração<br>
+            ADD CONSTRAINT vai define o nome da nova tabela que vai ser cirado  <br>
+            PRIMARY KEY define que essa coluna vai ser um chave primeria e em parentes define a coluna que vai ser atualizada <br>
+            PRIMARY KEY São restrições de banco que difine o id da coluna como pai<br> e não podendo dexar ele com valor nulo ou igual a outro já existente 
+
+        </h2>
+        <div><span>ALTER TABLE</span> TB_VENDEDORES<br> <span>ADD CONSTRAINT </span>PK_TB_VENDEDORES<br> <span>PRIMARY KEY</span> (MATRICULA);</div>
+    </section>
+
+    
+
+</body>
+</html>
