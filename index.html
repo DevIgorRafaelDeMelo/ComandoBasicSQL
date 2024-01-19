@@ -42,7 +42,12 @@
     </style>
 </head>
 <body>
-    <h4>Command SQL</h4>
+    <h4>Comandos Basicos</h4>
+    <section>
+        <header>Query</header>
+        <H2> Uma query em SQL é uma instrução escrita na linguagem SQL (Structured Query Language) que é usada para recuperar, inserir, atualizar ou excluir dados em um banco de dados. As queries são usadas para comunicar-se com o banco de dados e executar operações desejadas.
+        </H2>
+    </section>
     <section>
             <header>Comando de consulta</header>
             <H2>Soleciona a tabela selecionada</H2>
@@ -90,10 +95,59 @@
             ADD CONSTRAINT vai define o nome da nova tabela que vai ser cirado  <br>
             PRIMARY KEY define que essa coluna vai ser um chave primeria e em parentes define a coluna que vai ser atualizada <br>
             PRIMARY KEY São restrições de banco que difine o id da coluna como pai<br> e não podendo dexar ele com valor nulo ou igual a outro já existente 
-
         </h2>
         <div><span>ALTER TABLE</span> TB_VENDEDORES<br> <span>ADD CONSTRAINT </span>PK_TB_VENDEDORES<br> <span>PRIMARY KEY</span> (MATRICULA);</div>
     </section>
+    <section>
+        <header>Especificação do metodo TO_DATE para leitura de Data</header>
+        <h2>
+            TO_DATE nada mais é que uma função que recebe dois valores formatando para o formato DATE.
+        </h2>
+        <div>  INSERT INTO TB_VENDEDORES (
+            MATRICULA, NOME, DATA_ADMISSAO, PERCENTUAL_COMISSAO
+       ) VALUES (
+            '00777','Katy Peterson',<span>TO_DATE('02/04/2020','MM/DD/YYYY')</span>, 0.10
+       );</div>
+    </section>
+    <section>
+        <header>Comando de consulda de data especifica</header>
+        <h2>
+            A função TO_CHAR traz os indices das especificação definida do comando acima por exemplo o indice MM <br>
+            em poucas palavras é como de tivese definindo uma variavel em uma lista de array 
+        </h2>
+        <div> SELECT <span>TO_CHAR(DATA_NACIMENTO,MM)</span> FROM TB_CLIENTES</div>
+    </section>
+    <section>
+        <header>Operadores Logicos</header>
+        <h2>
+            Operadores Logicos tbm tem a mesma função em SQL caso a consulta tenha alguma especialização de chamada
+        </h2>
+        <div> SELECT * FROM TB_VENDEDORES WHERE PERCENTUAL_COMISSAO <span>< </span>0.17;</div>
+        <div> SELECT * FROM TB_VENDEDORES WHERE PERCENTUAL_COMISSAO <span><= </span>0.17;</div>
+        <div> SELECT * FROM TB_VENDEDORES WHERE PERCENTUAL_COMISSAO <span>=> </span>0.17;</div>
+        <div> SELECT * FROM TB_VENDEDORES WHERE PERCENTUAL_COMISSAO <span><> </span>0.17;</div>
+
+    </section>
+    <section>
+        <header>Operadores Logicos AND OR</header>
+        <h2>
+            AND e OR tem a mesma logica que na programação eles validão as logicas definidas<br>
+            retornan o valor delas se for verdadeira
+        </h2>
+        <div> SELECT * FROM TB_CLIENTES WHERE (IDADE >= 18 AND SEXO = 'F' 
+           <span> AND</span> CIDADE = 'Sao Paulo') <span>OR</span> BAIRRO = 'Barra da Tijuca';</div>
+    </section>
+    <section>
+        <header>Operadores Logicos NOT</header>
+        <h2>
+            Inverto o valor logico Verdadeiro ou falso
+        </h2>
+        <div> SELECT * FROM TB_CLIENTES WHERE <span>NOT</span>((IDADE >= 18 AND SEXO = 'F' 
+           AND CIDADE = 'Sao Paulo') OR BAIRRO = 'Barra da Tijuca');</div>
+    </section>
+
+
+    
 
     
 
