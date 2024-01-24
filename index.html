@@ -145,10 +145,44 @@
         <div> SELECT * FROM TB_CLIENTES WHERE <span>NOT</span>((IDADE >= 18 AND SEXO = 'F' 
            AND CIDADE = 'Sao Paulo') OR BAIRRO = 'Barra da Tijuca');</div>
     </section>
-
-
+    <section>
+        <header>Ateração de Identificador</header>
+        <h2>
+            Coverte o nome da tabela.
+        </h2>
+        <div>SELECT CPF <span>AS</span> IDENTIFICADOR, NOME <span>AS</span> "NOME DE CLIENTE", BAIRRO, CIDADE FROM TABELA_DE_CLIENTES;</div>
+    </section>
+    <section>
+        <header>Ateração de Identificador de tabela</header>
+        <h2>
+            Um simples espaço depois de chamar a tabela voce cria uma espece gancho da tabela.
+        </h2>
+        <div>SELECT <span>TDC.</span>* FROM TABELA_DE_CLIENTES <span>TDC</span>;</div>
+    </section>
+    <section>
+        <header>Between</header>
+        <h2>
+           Between pega o espaço entre duas operações "ENTRE"
+        </h2>
+        <div>SELECT * FROM TABELA_DE_CLIENTES WHERE IDADE <span> BETWEEN</span> 17 AND 22;</div>
+    </section>
+    <section>
+        <header>Chamando varios Valores</header>
+        <h2>
+           O IN serve para quando precisar de varios valores ou strings <br>de valores diferente em ver de usar o OR pede-se usar IN 
+        </h2>
+        <div>SELECT * FROM TABELA_DE_PRODUTOS WHERE SABOR <span>IN</span> ('Manga','Laranja','Melancia') AND TAMANHO = '1 Litro';</div>
+    </section>
+    <section>
+        <header>Busca de caracteres em Strings</header>
+        <h2>
+           Em uma busca de caracteres em uma descrição a função LIKE pega a string entre aspas e busca na coluna<br>  
+           observação: as % seja na frente como no final da string descreve os parametro da string definida <br>
+            como a string do banco de dados deve estar.
+        </h2>
+        <div>SELECT * FROM TABELA_DE_PRODUTOS WHERE SABOR <span>LIKE</span> '%Maca%';</div>
+    </section>
     
-
     
 
 </body>
